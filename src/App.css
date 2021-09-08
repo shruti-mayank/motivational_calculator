@@ -1,38 +1,86 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+  background: linear-gradient(125deg, #FFFFFF 0%, #000000 100%), linear-gradient(200deg, #FFD9E8 0%, #FFD9E8 50%, #DE95BA calc(50% + 1px), #DE95BA 60%, #7F4A88 calc(60% + 1px), #7F4A88 75%, #4A266A calc(75% + 1px), #4A266A 100%), linear-gradient(113deg, #FFD9E8 0%, #FFD9E8 40%, #DE95BA calc(40% + 1px), #DE95BA 50%, #7F4A88 calc(50% + 1px), #7F4A88 70%, #4A266A calc(70% + 1px), #4A266A 100%);
+  background-blend-mode: overlay, overlay, normal;
+  height: 100vh;
+}
+.calculator{
+  background: #19052b;
+  width: 300px;
+  margin: 0 auto;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+/* Display Screen */
+input[type="text"] {
+  height: 60px;
+  text-align: right;
+}
+input:focus{
+  outline: none!important;
+  border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Keypad */
+.keypad{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+}
+.keypad .btn{
+  background-color: #e0e0e0;
+  font-size: 20px;
+}
+.keypad .btn:hover{
+  background-color: #8b8585;
+  color: #fff;
+}
+.keypad .btn:focus{
+  outline: none;
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#clear {
+  grid-column: 1/3;
+  grid-row: 1;
+  background-color: #a05c7e;
+  color: #fff;
+}
+#clear:hover{
+  background-color: #53223b;
+}
+#result{
+  background-color: #8e3a9c;
+  color: #fff;
+  grid-column: 3/5;
+  grid-row: 5;
+}
+#result:hover{
+  background-color: #9453c2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#multiply,#add,#minus,#divide{
+  background-color: #7F4A88;
+  color: #fff;
+}
+#multiply:hover,
+#add:hover,
+#minus:hover,
+#divide:hover{
+  background-color: #9453c2;
 }
 
-.App-link {
-  color: #61dafb;
+/* Quote */
+#quote{
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #19052b;
+  color: #fff;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#new-quote{
+  background-color: #9453c2;
+  color: #fff;
+  font-size: 15px;
 }
